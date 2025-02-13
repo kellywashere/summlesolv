@@ -34,25 +34,9 @@ void print_expr_stack_debug(SimpleExpr* expr_stack, size_t depth) {
 	}
 }
 
-// following array is filled with function pointers
 char ops[] = "+-*/";
 
 void solve(int target, int* nrs, size_t nrs_len, SimpleExpr* expr_stack, size_t depth, size_t max_depth) {
-	/*
-	printf("solve(%d, [", target);
-	for (int ii = 0; ii < nrs_len; ++ii) {
-		nd_print(nrs + ii);
-		if (ii < nrs_len - 1)
-			printf(",");
-	}
-	printf("], %zu, ...\n", nrs_len);
-	printf("Depth: %zu\n", depth);
-	printf("expr: ");
-	print_expr_stack_debug(expr_stack, depth);
-	printf("\n");
-	//printf("Items on nrs stack: %lu\n", ((void*)(nrs + nrs_len) - dbg_ptr) / sizeof(NumDen));
-	*/
-
 	int res;
 	// base cases
 	if (depth > max_depth)
